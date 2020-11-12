@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ApplicationCore.Exceptions;
+using System.Collections.Generic;
 
 namespace ApplicationCore.ValueObject
 {
@@ -12,6 +13,9 @@ namespace ApplicationCore.ValueObject
         }
         public PhoneNumber(string phone)
         {
+            if(string.IsNullOrEmpty(phone))
+                throw new ContactException("Phone can not be null or empty");
+
             Value = phone;
         }
 

@@ -1,6 +1,7 @@
 using ApplicationCore.Interfaces;
 using AutoMapper;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace Web
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
 
             ConfigureAutoMapper(services);
 

@@ -10,7 +10,6 @@ using Web.Models;
 
 namespace Web.Controllers.Api
 {
-    //[Route("api/[controller]/[action]")]
     [Route("api/[controller]")]
     [ApiController]
     public class ContactsController : Controller

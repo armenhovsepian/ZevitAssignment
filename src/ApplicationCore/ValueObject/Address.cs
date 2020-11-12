@@ -31,6 +31,7 @@ namespace ApplicationCore.ValueObject
             yield return ZipCode;
         }
 
+        public override string ToString() => $"{ZipCode}, {Street}, {City}, {State}, {Country}";
 
     }
 }

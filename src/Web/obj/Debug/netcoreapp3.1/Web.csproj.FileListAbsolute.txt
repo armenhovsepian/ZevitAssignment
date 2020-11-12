@@ -160,3 +160,4 @@ D:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Razor\Views\Ho
 D:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
 D:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
 D:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Razor\Views\ChangesHistory\Index.cshtml.g.cs

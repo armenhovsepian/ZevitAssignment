@@ -20,9 +20,11 @@ namespace Web.Features.ContactFeatures.Commands
     public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, int>
     {
         private readonly IContactRepository _contactRepository;
-        public CreateContactCommandHandler(IContactRepository contactRepository)
+        private readonly IEventStoreRepository _eventStoreRepository;
+        public CreateContactCommandHandler(IContactRepository contactRepository, IEventStoreRepository eventStoreRepository)
         {
             _contactRepository = contactRepository;
+            _eventStoreRepository = eventStoreRepository;
         }
 
         public async Task<int> Handle(CreateContactCommand request, CancellationToken cancellationToken)
@@ -35,6 +37,7 @@ namespace Web.Features.ContactFeatures.Commands
                 );
 
             await _contactRepository.AddAsync(contact);
+            _eventStoreRepository.Save(contact);
             return contact.Id;
         }
     }

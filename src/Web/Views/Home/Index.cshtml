@@ -23,10 +23,7 @@
                         @Html.DisplayNameFor(model => model.Id)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.FirstName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.LastName)
+                        @Html.DisplayNameFor(model => model.FullName)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.EmailAddress)
@@ -35,19 +32,7 @@
                         @Html.DisplayNameFor(model => model.PhoneNumber)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Street)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.City)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.State)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Country)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ZipCode)
+                        @Html.DisplayNameFor(model => model.Address)
                     </th>
                     <th></th>
                 </tr>
@@ -60,10 +45,7 @@
                             @Html.DisplayFor(modelItem => item.Id)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName)
+                            @Html.DisplayFor(modelItem => item.FullName)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.EmailAddress)
@@ -72,23 +54,14 @@
                             @Html.DisplayFor(modelItem => item.PhoneNumber)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Street)
+                            @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.City)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.State)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Country)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ZipCode)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            <div class="btn-group" role="group">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                                <a asp-controller="ChangesHistory" asp-action="Index" asp-route-id="@item.Id" class="btn btn-sm btn-dark">Changes History</a>
+                            </div>
                         </td>
                     </tr>
                 }

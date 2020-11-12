@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ApplicationCore.Exceptions;
 using System.Collections.Generic;
 
 namespace ApplicationCore.ValueObject
@@ -14,11 +14,17 @@ namespace ApplicationCore.ValueObject
         }
         public FullName(string firstName, string lastName)
         {
+            if (string.IsNullOrEmpty(firstName))
+                throw new ContactException("FirstName can not be null or empty");
+
+            if (string.IsNullOrEmpty(lastName))
+                throw new ContactException("LastName can not be null or empty");
+
             FirstName = firstName;
             LastName = lastName;
         }
 
-        public String fullName() => $"{FirstName} {LastName}";
+        public override string ToString() => $"{FirstName} {LastName}";
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
