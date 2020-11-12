@@ -1,6 +1,5 @@
 ﻿using ApplicationCore.Dtos;
 using ApplicationCore.Entities;
-using ApplicationCore.ValueObject;
 using System.Linq;
 
 namespace Infrastructure.Data

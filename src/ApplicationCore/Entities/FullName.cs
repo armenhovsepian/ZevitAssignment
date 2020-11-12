@@ -1,7 +1,7 @@
 ﻿using ApplicationCore.Exceptions;
 using System.Collections.Generic;
 
-namespace ApplicationCore.ValueObject
+namespace ApplicationCore.Entities
 {
     public class FullName : ValueObject
     {

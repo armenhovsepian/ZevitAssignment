@@ -1,5 +1,5 @@
 ﻿using ApplicationCore.Events;
-using ApplicationCore.ValueObject;
+using ApplicationCore.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using static ApplicationCore.Events.ContactEvents;

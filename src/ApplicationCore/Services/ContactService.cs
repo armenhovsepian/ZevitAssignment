@@ -1,6 +1,5 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
-using ApplicationCore.ValueObject;
 using System.Threading.Tasks;
 
 namespace ApplicationCore.Services

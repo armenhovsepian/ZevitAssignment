@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ApplicationCore.ValueObject
+namespace ApplicationCore.Entities
 {
     public class Address : ValueObject
     {

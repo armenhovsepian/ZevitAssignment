@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace ApplicationCore.ValueObject
+namespace ApplicationCore.Entities
 {
     public class EmailAddress : ValueObject
     {

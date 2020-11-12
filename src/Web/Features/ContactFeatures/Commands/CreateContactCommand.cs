@@ -1,6 +1,5 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
-using ApplicationCore.ValueObject;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

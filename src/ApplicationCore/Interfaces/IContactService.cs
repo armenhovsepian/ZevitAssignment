@@ -1,4 +1,4 @@
-﻿using ApplicationCore.ValueObject;
+﻿using ApplicationCore.Entities;
 using System.Threading.Tasks;
 
 namespace ApplicationCore.Interfaces

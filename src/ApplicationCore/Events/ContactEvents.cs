@@ -13,12 +13,12 @@ namespace ApplicationCore.Events
 
         public class ContactCreated : BaseContactEvent
         {
-            public int Id { get; set; }
+            // store created userId
         }
 
         public class ContactDeleted : BaseContactEvent
         {
-            public int Id { get; set; }
+            // store deleted userId
         }
 
         public class ContactFullNameUpdated : BaseContactEvent

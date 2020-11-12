@@ -1,5 +1,5 @@
-﻿using ApplicationCore.Interfaces;
-using ApplicationCore.ValueObject;
+﻿using ApplicationCore.Entities;
+using ApplicationCore.Interfaces;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
