@@ -27,9 +27,9 @@ namespace Web.Features.ContactFeatures.Commands
             _eventStoreRepository = eventStoreRepository;
         }
 
-        public async Task<int> Handle(UpdateContactCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(UpdateContactCommand request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Model.Id);
+            var contact = await _contactRepository.GetByIdAsync(request.Model.Id, ct);
 
             if (contact == null)
             {
@@ -43,7 +43,7 @@ namespace Web.Features.ContactFeatures.Commands
                 contact.UpdateAddress(new Address(request.Model.Street, request.Model.City, request.Model.State, request.Model.Country, request.Model.ZipCode));
             }
 
-            await _contactRepository.UpdateAsync(contact);
+            await _contactRepository.UpdateAsync(contact,ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }

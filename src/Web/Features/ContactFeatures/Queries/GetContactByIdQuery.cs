@@ -27,9 +27,9 @@ namespace Web.Features.ContactFeatures.Queries
             _mapper = mapper;
         }
 
-        public async Task<ContactDto> Handle(GetContactByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ContactDto> Handle(GetContactByIdQuery request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Id);
+            var contact = await _contactRepository.GetByIdAsync(request.Id, ct);
 
             if (contact == null)
                 return default;

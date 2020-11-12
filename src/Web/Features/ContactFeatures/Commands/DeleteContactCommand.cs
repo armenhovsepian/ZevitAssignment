@@ -24,15 +24,15 @@ namespace Web.Features.ContactFeatures.Commands
             _eventStoreRepository = eventStoreRepository;
         }
 
-        public async Task<int> Handle(DeleteContactCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(DeleteContactCommand request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Id);
+            var contact = await _contactRepository.GetByIdAsync(request.Id, ct);
 
             if (contact == null)
                 return default;
 
             contact.Delete();
-            await _contactRepository.DeleteAsync(contact);
+            await _contactRepository.DeleteAsync(contact, ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }

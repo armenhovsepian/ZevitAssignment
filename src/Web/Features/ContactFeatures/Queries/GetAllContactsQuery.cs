@@ -33,10 +33,10 @@ namespace Web.Features.ContactFeatures.Queries
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ContactDto>> Handle(GetAllContactsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<ContactDto>> Handle(GetAllContactsQuery request, CancellationToken ct)
         {
             var specification = new ContactFilterSpecification(request.PagingOptions.Skip, request.PagingOptions.Take);
-            var contactList = await _contactRepository.ListAsync(specification);
+            var contactList = await _contactRepository.ListAsync(specification, ct);
 
             if (contactList == null)
             {

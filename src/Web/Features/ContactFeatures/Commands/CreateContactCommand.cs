@@ -26,7 +26,7 @@ namespace Web.Features.ContactFeatures.Commands
             _eventStoreRepository = eventStoreRepository;
         }
 
-        public async Task<int> Handle(CreateContactCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateContactCommand request, CancellationToken ct)
         {
             var contact = new Contact(
                 new FullName(request.Model.FirstName, request.Model.LastName),
@@ -35,7 +35,7 @@ namespace Web.Features.ContactFeatures.Commands
                 new Address(request.Model.Street, request.Model.City, request.Model.State, request.Model.Country, request.Model.ZipCode)
                 );
 
-            await _contactRepository.AddAsync(contact);
+            await _contactRepository.AddAsync(contact, ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }
