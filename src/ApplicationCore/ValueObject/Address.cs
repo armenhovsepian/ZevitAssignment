@@ -30,5 +30,7 @@ namespace ApplicationCore.ValueObject
             yield return Country;
             yield return ZipCode;
         }
+
+
     }
 }

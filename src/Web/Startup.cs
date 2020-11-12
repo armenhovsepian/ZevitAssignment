@@ -1,4 +1,5 @@
 using ApplicationCore.Interfaces;
+using AutoMapper;
 using Infrastructure.Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Web.Infrustructure;
 
 namespace Web
 {
@@ -25,12 +27,12 @@ namespace Web
             ConfigureInMemoryDatabases(services);
 
             services.AddControllersWithViews();
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(Startup));
-
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped<IContactRepository, ContactRepository>();
+
+            ConfigureAutoMapper(services);
 
             //add services for controllers
             services.AddControllers();
@@ -62,9 +64,9 @@ namespace Web
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "defaultApi",
-                    pattern: "api/{controller}/{action}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "defaultApi",
+                //    pattern: "api/{controller}/{action}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
@@ -87,6 +89,18 @@ namespace Web
         {
             services.AddDbContext<ContactContext>(c =>
                 c.UseSqlServer(Configuration.GetConnectionString("ContactConnection")));
+        }
+
+        private void ConfigureAutoMapper(IServiceCollection services)
+        {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
         }
     }
 }

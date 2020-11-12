@@ -20,6 +20,7 @@ namespace Web.Models
 
         [Required]
         [StringLength(50)]
+        [EmailAddress]
         public string EmailAddress { get; set; }
 
         [StringLength(18)]

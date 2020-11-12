@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace Web.Controllers.Api
         // GET api/contacts
         // GET api/contacts?pagesize=3&pagenumber=1
         [HttpGet(Name = nameof(GetContactsAsync))]
-        public async Task<ActionResult<IEnumerable<Contact>>> GetContactsAsync([FromQuery] PagingOptions pagingOptions, CancellationToken ct)
+        public async Task<ActionResult<IEnumerable<ContactDto>>> GetContactsAsync([FromQuery] PagingOptions pagingOptions, CancellationToken ct)
         {
             var contacts = await _mediator.Send(new GetAllContactsQuery(pagingOptions), ct); 
             return Ok(contacts);
@@ -32,7 +32,7 @@ namespace Web.Controllers.Api
 
 
         [HttpGet("{id}", Name = nameof(GetContactAsync))]
-        public async Task<ActionResult<Contact>> GetContactAsync(int id, CancellationToken ct)
+        public async Task<ActionResult<ContactDto>> GetContactAsync(int id, CancellationToken ct)
         {
             var contact = await _mediator.Send(new GetContactByIdQuery(id), ct);
 

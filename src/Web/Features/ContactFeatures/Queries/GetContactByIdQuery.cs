@@ -1,12 +1,13 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Dtos;
 using ApplicationCore.Interfaces;
+using AutoMapper;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Web.Features.ContactFeatures.Queries
 {
-    public class GetContactByIdQuery : IRequest<Contact>
+    public class GetContactByIdQuery : IRequest<ContactDto>
     {
         public int Id { get; }
 
@@ -16,23 +17,24 @@ namespace Web.Features.ContactFeatures.Queries
         }
     }
 
-    public class GetContactByIdQueryHandler : IRequestHandler<GetContactByIdQuery, Contact>
+    public class GetContactByIdQueryHandler : IRequestHandler<GetContactByIdQuery, ContactDto>
     {
         private readonly IContactRepository _contactRepository;
-
-        public GetContactByIdQueryHandler(IContactRepository contactRepository)
+        private readonly IMapper _mapper;
+        public GetContactByIdQueryHandler(IContactRepository contactRepository, IMapper mapper)
         {
             _contactRepository = contactRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Contact> Handle(GetContactByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ContactDto> Handle(GetContactByIdQuery request, CancellationToken cancellationToken)
         {
             var contact = await _contactRepository.GetByIdAsync(request.Id);
 
             if (contact == null)
                 return default;
 
-            return contact;
+            return _mapper.Map<ContactDto>(contact);
         }
     }
 }

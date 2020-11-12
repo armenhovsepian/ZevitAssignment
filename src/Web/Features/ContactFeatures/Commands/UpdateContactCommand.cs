@@ -41,7 +41,7 @@ namespace Web.Features.ContactFeatures.Commands
                 contact.UpdateAddress(new Address(request.Model.Street, request.Model.City, request.Model.State, request.Model.Country, request.Model.ZipCode));
             }
 
-            await _contactRepository.AddAsync(contact);
+            await _contactRepository.UpdateAsync(contact);
             return contact.Id;
         }
     }
