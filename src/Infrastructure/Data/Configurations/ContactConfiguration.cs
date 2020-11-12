@@ -9,14 +9,6 @@ namespace Infrastructure.Data.Configurations
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
             builder.HasKey(c => c.Id);
-            //builder.Property(c => c.FullName).IsRequired();
-            //builder.Property(c => c.PhoneNumber).IsRequired();
-            //builder.Property(c => c.EmailAddress).IsRequired();
-
-            //builder.OwnsOne(o => o.FullName);
-            //builder.OwnsOne(o => o.EmailAddress);
-            //builder.OwnsOne(o => o.PhoneNumber);
-            //builder.OwnsOne(o => o.Address);
 
             builder.OwnsOne(c => c.EmailAddress)
                 .Property(p => p.Value)
@@ -52,26 +44,27 @@ namespace Infrastructure.Data.Configurations
                 a.Property(a => a.ZipCode)
                     .HasMaxLength(18)
                     .HasColumnName("ZipCode")
-                    .IsRequired();
+                    .HasDefaultValue("");
 
                 a.Property(a => a.Street)
                     .HasMaxLength(180)
                     .HasColumnName("Street")
-                    .IsRequired();
+                    .HasDefaultValue("");
 
                 a.Property(a => a.State)
                     .HasColumnName("State")
-                    .HasMaxLength(60);
+                    .HasMaxLength(60)
+                    .HasDefaultValue("");
 
                 a.Property(a => a.Country)
                     .HasMaxLength(90)
                     .HasColumnName("Country")
-                    .IsRequired();
+                    .HasDefaultValue("");
 
                 a.Property(a => a.City)
                     .HasMaxLength(100)
                     .HasColumnName("City")
-                    .IsRequired();
+                    .HasDefaultValue("");
             });
         }
     }

@@ -1,7 +1,7 @@
 using ApplicationCore.Interfaces;
 using AutoMapper;
 using Infrastructure.Data;
-using Infrastructure.Services;
+using Infrastructure.EventStore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +25,8 @@ namespace Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ConfigureInMemoryDatabases(services);
+            //ConfigureInMemoryDatabases(services);
+            ConfigureProductionServices(services);
 
             services.AddControllersWithViews();
             services.AddMediatR(typeof(Startup));
@@ -36,7 +37,6 @@ namespace Web
 
             ConfigureAutoMapper(services);
 
-            //add services for controllers
             services.AddControllers();
         }
 
@@ -50,17 +50,10 @@ namespace Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
-
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetService<ContactContext>();
-                ContactContextSeed.SeedData(context);
-            }
-
+            SeedDb(app);
 
             app.UseRouting();
 
@@ -79,6 +72,14 @@ namespace Web
             app.UseStaticFiles();
         }
 
+        private static void SeedDb(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<ContactContext>();
+                ContactContextSeed.SeedData(context);
+            }
+        }
 
         private void ConfigureInMemoryDatabases(IServiceCollection services)
         {

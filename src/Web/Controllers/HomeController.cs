@@ -41,6 +41,8 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ContactFormModel model, CancellationToken ct)
         {
+            if (!ModelState.IsValid) return View(model);
+
             await _mediator.Send(new CreateContactCommand(model), ct);
             return RedirectToAction(nameof(Index));
         }
@@ -59,6 +61,8 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit( ContactFormModel model, CancellationToken ct)
         {
+            if (!ModelState.IsValid) return View(model);
+
             await _mediator.Send(new UpdateContactCommand(model), ct);
             return RedirectToAction(nameof(Index));
         }

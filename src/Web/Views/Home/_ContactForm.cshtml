@@ -1,8 +1,8 @@
 ﻿@model ContactFormModel
 
-<form asp-action=@(Model == null || Model.Id == default ? "Create" : "Edit") method="post" role="form" novalidate>
+<form action=@(Model == null || Model.Id == default ? "Create" : "Edit") method="post" role="form" novalidate>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+    <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label asp-for="FirstName" class="control-label"></label>
         <input asp-for="FirstName" class="form-control" />

@@ -1,7 +1,6 @@
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.deps.json
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.dll
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.pdb
-D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.csprojAssemblyReference.cache
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.AssemblyInfoInputs.cache
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.AssemblyInfo.cs
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.csproj.CoreCompileInputs.cache

@@ -4,7 +4,7 @@ using ApplicationCore.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Infrastructure.Services
+namespace Infrastructure.EventStore
 {
     public class EventStoreRepository : IEventStoreRepository
     {
