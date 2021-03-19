@@ -6,3 +6,12 @@ D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\A
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.csproj.CoreCompileInputs.cache
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.dll
 D:\GithubProjects\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.pdb
+D:\repos\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.deps.json
+D:\repos\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.dll
+D:\repos\ZevitAssignment\src\ApplicationCore\bin\Debug\netstandard2.1\ApplicationCore.pdb
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.csprojAssemblyReference.cache
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.AssemblyInfoInputs.cache
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.AssemblyInfo.cs
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.csproj.CoreCompileInputs.cache
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.dll
+D:\repos\ZevitAssignment\src\ApplicationCore\obj\Debug\netstandard2.1\ApplicationCore.pdb

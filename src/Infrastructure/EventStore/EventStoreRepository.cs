@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Entities.AggregatesModel;
 using ApplicationCore.Events;
 using ApplicationCore.Interfaces;
 using System.Collections.Generic;

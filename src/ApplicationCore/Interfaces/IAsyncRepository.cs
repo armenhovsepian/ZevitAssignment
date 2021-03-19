@@ -5,6 +5,14 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Interfaces
 {
+    /// <summary>
+    /// Repository Pattern Goals
+    /// ● Decouple Business code from data Access.As a result, the persistence Framework can be changed without a great effort
+    /// ● Separation of Concerns
+    /// ● Minimize duplicate query logic
+    /// ● Testability
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IAsyncRepository<T> where T : BaseEntity
     {
         Task<T> GetByIdAsync(int id, CancellationToken ct);

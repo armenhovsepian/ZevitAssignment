@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Dtos;
 using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using System.Linq;
 
 namespace Infrastructure.Data
@@ -579,6 +580,6 @@ namespace Infrastructure.Data
             Country = "China",
             ZipCode = null
         }};
-  
+
     }
 }

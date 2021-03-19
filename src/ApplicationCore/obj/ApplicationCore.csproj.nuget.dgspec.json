@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {}
+    "D:\\repos\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {}
   },
   "projects": {
-    "D:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
+    "D:\\repos\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "D:\\repos\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "D:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
-        "packagesPath": "C:\\Users\\NP\\.nuget\\packages\\",
-        "outputPath": "D:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\obj\\",
+        "projectPath": "D:\\repos\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
+        "packagesPath": "C:\\Users\\ArmenHovsepian\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\ZevitAssignment\\src\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\NP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ArmenHovsepian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://A.Hovsepian:XbBuaq5EWN7VDm9A@84.241.59.131:553/iToursThirdParty/_packaging/BackendTP/nuget/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

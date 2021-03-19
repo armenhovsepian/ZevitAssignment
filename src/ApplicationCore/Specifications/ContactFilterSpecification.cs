@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Entities.AggregatesModel;
 
 namespace ApplicationCore.Specifications
 {

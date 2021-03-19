@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Entities.AggregatesModel;
 using ApplicationCore.Interfaces;
 
 namespace Infrastructure.Data

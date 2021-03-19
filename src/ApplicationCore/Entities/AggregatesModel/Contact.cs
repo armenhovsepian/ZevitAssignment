@@ -1,12 +1,11 @@
 ﻿using ApplicationCore.Events;
-using ApplicationCore.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using static ApplicationCore.Events.ContactEvents;
 
-namespace ApplicationCore.Entities
+namespace ApplicationCore.Entities.AggregatesModel
 {
-    public class Contact : BaseEntity
+    public class Contact : BaseEntity, IAggregationRoot
     {
         private readonly List<IDomainEvent> _events;
         public IEnumerable<IDomainEvent> GetChanges() => _events.AsEnumerable();
