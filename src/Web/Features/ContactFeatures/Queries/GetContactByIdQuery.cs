@@ -19,17 +19,17 @@ namespace Web.Features.ContactFeatures.Queries
 
     public class GetContactByIdQueryHandler : IRequestHandler<GetContactByIdQuery, ContactDto>
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public GetContactByIdQueryHandler(IContactRepository contactRepository, IMapper mapper)
+        public GetContactByIdQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         public async Task<ContactDto> Handle(GetContactByIdQuery request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Id, ct);
+            var contact = await _unitOfWork.ContactRepository.GetByIdAsync(request.Id, ct);
 
             if (contact == null)
                 return default;

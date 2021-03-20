@@ -19,11 +19,11 @@ namespace Web.Features.ContactFeatures.Commands
 
     public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, int>
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEventStoreRepository _eventStoreRepository;
-        public CreateContactCommandHandler(IContactRepository contactRepository, IEventStoreRepository eventStoreRepository)
+        public CreateContactCommandHandler(IUnitOfWork unitOfWork, IEventStoreRepository eventStoreRepository)
         {
-            _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
             _eventStoreRepository = eventStoreRepository;
         }
 
@@ -36,7 +36,8 @@ namespace Web.Features.ContactFeatures.Commands
                 new Address(request.Model.Street, request.Model.City, request.Model.State, request.Model.Country, request.Model.ZipCode)
                 );
 
-            await _contactRepository.AddAsync(contact, ct);
+            await _unitOfWork.ContactRepository.AddAsync(contact, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }

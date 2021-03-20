@@ -16,23 +16,24 @@ namespace Web.Features.ContactFeatures.Commands
 
     public class DeleteContactCommandHandler : IRequestHandler<DeleteContactCommand, int>
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEventStoreRepository _eventStoreRepository;
-        public DeleteContactCommandHandler(IContactRepository contactRepository, IEventStoreRepository eventStoreRepository)
+        public DeleteContactCommandHandler(IUnitOfWork unitOfWork, IEventStoreRepository eventStoreRepository)
         {
-            _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
             _eventStoreRepository = eventStoreRepository;
         }
 
         public async Task<int> Handle(DeleteContactCommand request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Id, ct);
+            var contact = await _unitOfWork.ContactRepository.GetByIdAsync(request.Id, ct);
 
             if (contact == null)
                 return default;
 
             contact.Delete();
-            await _contactRepository.DeleteAsync(contact, ct);
+            await _unitOfWork.ContactRepository.DeleteAsync(contact, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }

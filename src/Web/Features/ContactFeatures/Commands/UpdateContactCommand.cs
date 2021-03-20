@@ -19,17 +19,17 @@ namespace Web.Features.ContactFeatures.Commands
 
     public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, int>
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IEventStoreRepository _eventStoreRepository;
-        public UpdateContactCommandHandler(IContactRepository contactRepository, IEventStoreRepository eventStoreRepository)
+        public UpdateContactCommandHandler(IUnitOfWork unitOfWork, IEventStoreRepository eventStoreRepository)
         {
-            _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
             _eventStoreRepository = eventStoreRepository;
         }
 
         public async Task<int> Handle(UpdateContactCommand request, CancellationToken ct)
         {
-            var contact = await _contactRepository.GetByIdAsync(request.Model.Id, ct);
+            var contact = await _unitOfWork.ContactRepository.GetByIdAsync(request.Model.Id, ct);
 
             if (contact == null)
             {
@@ -43,7 +43,8 @@ namespace Web.Features.ContactFeatures.Commands
                 contact.UpdateAddress(new Address(request.Model.Street, request.Model.City, request.Model.State, request.Model.Country, request.Model.ZipCode));
             }
 
-            await _contactRepository.UpdateAsync(contact,ct);
+            await _unitOfWork.ContactRepository.UpdateAsync(contact, ct);
+            await _unitOfWork.SaveChangesAsync(ct);
             _eventStoreRepository.Save(contact);
             return contact.Id;
         }

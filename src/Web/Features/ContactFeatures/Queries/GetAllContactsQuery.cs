@@ -11,10 +11,10 @@ using Web.Models;
 
 namespace Web.Features.ContactFeatures.Queries
 {
-    public class GetAllContactsQuery: IRequest<IEnumerable<ContactDto>>
+    public class GetAllContactsQuery : IRequest<IEnumerable<ContactDto>>
     {
         public PagingOptions PagingOptions { get; private set; }
-        
+
         public GetAllContactsQuery(PagingOptions pagingOptions)
         {
             PagingOptions = pagingOptions;
@@ -24,19 +24,19 @@ namespace Web.Features.ContactFeatures.Queries
 
     public class GetAllContactsQueryHandler : IRequestHandler<GetAllContactsQuery, IEnumerable<ContactDto>>
     {
-        private readonly IContactRepository _contactRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetAllContactsQueryHandler(IContactRepository contactRepository, IMapper mapper)
+        public GetAllContactsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _contactRepository = contactRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<ContactDto>> Handle(GetAllContactsQuery request, CancellationToken ct)
         {
             var specification = new ContactFilterSpecification(request.PagingOptions.Skip, request.PagingOptions.Take);
-            var contactList = await _contactRepository.ListAsync(specification, ct);
+            var contactList = await _unitOfWork.ContactRepository.ListAsync(specification, ct);
 
             if (contactList == null)
             {
