@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using System.Threading.Tasks;
 
 namespace ApplicationCore.Interfaces

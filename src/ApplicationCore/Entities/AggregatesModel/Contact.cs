@@ -4,7 +4,7 @@ using ApplicationCore.Interfaces;
 using System.Collections.Generic;
 using static ApplicationCore.Events.ContactEvents;
 
-namespace ApplicationCore.Entities
+namespace ApplicationCore.Entities.AggregatesModel
 {
     public class Contact : BaseEntity, IAggregateRoot
     {

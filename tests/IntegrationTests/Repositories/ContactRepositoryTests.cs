@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;

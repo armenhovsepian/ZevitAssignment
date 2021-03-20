@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using ApplicationCore.Interfaces;
 using MediatR;
 using System.Threading;
@@ -7,7 +8,7 @@ using Web.Models;
 
 namespace Web.Features.ContactFeatures.Commands
 {
-    public class CreateContactCommand: IRequest<int>
+    public class CreateContactCommand : IRequest<int>
     {
         public ContactFormModel Model { get; private set; }
         public CreateContactCommand(ContactFormModel model)

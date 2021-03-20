@@ -1,5 +1,5 @@
 ﻿using ApplicationCore.Dtos;
-using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using AutoMapper;
 using Web.Models;
 

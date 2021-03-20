@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Entities.AggregatesModel;
 using ApplicationCore.Exceptions;
 using NUnit.Framework;
 using System.Linq;

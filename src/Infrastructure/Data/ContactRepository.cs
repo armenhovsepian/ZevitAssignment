@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.Entities.AggregatesModel;
 using ApplicationCore.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
