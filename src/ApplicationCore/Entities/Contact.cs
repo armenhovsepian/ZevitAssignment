@@ -1,15 +1,14 @@
 ﻿using ApplicationCore.Events;
-using ApplicationCore.Entities;
+using ApplicationCore.Exceptions;
+using ApplicationCore.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 using static ApplicationCore.Events.ContactEvents;
 
 namespace ApplicationCore.Entities
 {
-    public class Contact : BaseEntity
+    public class Contact : BaseEntity, IAggregateRoot
     {
-        private readonly List<IDomainEvent> _events;
-        public IEnumerable<IDomainEvent> GetChanges() => _events.AsEnumerable();
+        public List<IDomainEvent> RecordedEvents { get; private set; }
 
         public FullName FullName { get; private set; }
         public EmailAddress EmailAddress { get; private set; }
@@ -18,20 +17,26 @@ namespace ApplicationCore.Entities
 
         private Contact()
         {
-            _events = new List<IDomainEvent>();
+            RecordedEvents = new List<IDomainEvent>();
         }
 
         public Contact(FullName fullname, EmailAddress emailAddress, PhoneNumber phoneNumber, Address address) : this()
         {
+            if (fullname == null)
+                throw new ContactException("Fullname cannot be null");
+
+            if (emailAddress == null)
+                throw new ContactException("Emil address cannot be null");
+
+            if (phoneNumber == null)
+                throw new ContactException("Phone number cannot be null");
+
             FullName = fullname;
             EmailAddress = emailAddress;
             PhoneNumber = phoneNumber;
             Address = address;
 
-            _events.Add(new ContactCreated
-            {
-                Id = Id
-            });
+            RecordedEvents.Add(new ContactCreated(Id));
         }
 
         public void UpdateFullName(FullName fullname)
@@ -39,10 +44,7 @@ namespace ApplicationCore.Entities
             if (!FullName.Equals(fullname))
             {
                 FullName = fullname;
-                _events.Add(new ContactFullNameUpdated
-                {
-                    FullName = fullname.ToString()
-                });
+                RecordedEvents.Add(new ContactFullNameUpdated(fullname.ToString()));
             }
         }
 
@@ -51,10 +53,7 @@ namespace ApplicationCore.Entities
             if (!EmailAddress.Equals(emailAddress))
             {
                 EmailAddress = emailAddress;
-                _events.Add(new ContactEmailAddressUpdated
-                {
-                    EmailAddress = emailAddress.Value
-                });
+                RecordedEvents.Add(new ContactEmailAddressUpdated(emailAddress.Value));
             }
         }
 
@@ -63,10 +62,7 @@ namespace ApplicationCore.Entities
             if (!PhoneNumber.Equals(phoneNumber))
             {
                 PhoneNumber = phoneNumber;
-                _events.Add(new ContactPhoneNumberUpdated
-                {
-                    PhoneNumber = phoneNumber.Value
-                });
+                RecordedEvents.Add(new ContactPhoneNumberUpdated(phoneNumber.Value));
             }
         }
 
@@ -75,21 +71,15 @@ namespace ApplicationCore.Entities
             if (!Address.Equals(address))
             {
                 Address = address;
-                _events.Add(new ContactAddressUpdated
-                {
-                    Address = address.ToString()
-                });
+                RecordedEvents.Add(new ContactAddressUpdated(address.ToString()));
             }
         }
 
         public void Delete()
         {
-            if (Id != default)
+            if (Id != default(int))
             {
-                _events.Add(new ContactDeleted
-                {
-                    Id = Id
-                });
+                RecordedEvents.Add(new ContactDeleted(Id));
             }
         }
     }

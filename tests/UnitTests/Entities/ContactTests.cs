@@ -1,6 +1,8 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Exceptions;
 using NUnit.Framework;
+using System.Linq;
+using static ApplicationCore.Events.ContactEvents;
 
 namespace UnitTests.Entities
 {
@@ -25,5 +27,24 @@ namespace UnitTests.Entities
             var ex = Assert.Throws<ContactException>(() => new FullName(string.Empty, ""));
             Assert.That(ex.Message, Is.EqualTo("FirstName can not be null or empty"));
         }
+
+        [Test]
+        public void EventWilleRecorded()
+        {
+            var contact = new Contact(
+                new FullName("Armen", "Hovsepian"),
+                new EmailAddress("rmn.hovsepian@live.com"),
+                new PhoneNumber("+374-94331230"),
+                new Address("Tigran Petrosyan", "Yerevan", "Davtashen", "Armenia", "1234")
+                );
+
+            var wasRecorded = contact
+                    .RecordedEvents
+                    .OfType<ContactCreated>()
+                    .Count() == 1;
+
+            Assert.IsTrue(wasRecorded);
+        }
+
     }
 }

@@ -259,3 +259,23 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+src/ApplicationCore/bin
+src/ApplicationCore/obj
+src/Infrastructure/bin
+src/Infrastructure/obj
+src/Web/bin
+src/Web/obj
+
+*.obj
+*.bin
+
+/src/ApplicationCore/bin
+/src/ApplicationCore/obj
+/src/Infrastructure/bin
+/src/Infrastructure/obj
+/src/Web/bin
+/src/Web/obj
+
+
+/src/

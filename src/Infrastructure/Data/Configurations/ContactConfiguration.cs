@@ -10,6 +10,8 @@ namespace Infrastructure.Data.Configurations
         {
             builder.HasKey(c => c.Id);
 
+            builder.Ignore(c => c.RecordedEvents);
+
             builder.OwnsOne(c => c.EmailAddress)
                 .Property(p => p.Value)
                 .HasMaxLength(50)

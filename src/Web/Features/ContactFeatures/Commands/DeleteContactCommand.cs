@@ -7,7 +7,7 @@ namespace Web.Features.ContactFeatures.Commands
 {
     public class DeleteContactCommand : IRequest<int>
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public DeleteContactCommand(int id)
         {
             Id = id;

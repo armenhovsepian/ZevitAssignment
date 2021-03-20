@@ -23,6 +23,7 @@ namespace ApplicationCore.Entities
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
+            //return new object[Street, City, State, Country, ZipCode];
             // Using a yield return statement to return each element one at a time
             yield return Street;
             yield return City;

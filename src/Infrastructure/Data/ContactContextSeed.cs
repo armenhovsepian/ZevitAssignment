@@ -9,21 +9,26 @@ namespace Infrastructure.Data
 
         public static void SeedData(ContactContext context)
         {
-            if (!context.Contacts.Any())
+            using (context)
             {
-                foreach (var item in CONTACTS)
+                context.Database.EnsureCreated();
+
+                if (!context.Contacts.Any())
                 {
-                    var contact = new Contact(
-                        new FullName(item.FirstName, item.LastName),
-                        new EmailAddress(item.EmailAddress),
-                        new PhoneNumber(item.PhoneNumber),
-                        new Address(item.Street, item.City, item.State, item.Country, item.ZipCode)
-                        );
+                    foreach (var item in CONTACTS)
+                    {
+                        var contact = new Contact(
+                            new FullName(item.FirstName, item.LastName),
+                            new EmailAddress(item.EmailAddress),
+                            new PhoneNumber(item.PhoneNumber),
+                            new Address(item.Street, item.City, item.State, item.Country, item.ZipCode)
+                            );
 
-                    context.Contacts.Add(contact);
+                        context.Contacts.Add(contact);
+                    }
+
+                    context.SaveChanges();
                 }
-
-                context.SaveChanges();
             }
         }
 

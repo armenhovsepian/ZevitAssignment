@@ -8,10 +8,11 @@ namespace ApplicationCore.Entities
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
 
+        // Satisfy the serialization requirements
         private FullName()
         {
-
         }
+
         public FullName(string firstName, string lastName)
         {
             if (string.IsNullOrEmpty(firstName))
@@ -28,6 +29,7 @@ namespace ApplicationCore.Entities
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
+            //return new object[] { FirstName, LastName };
             yield return FirstName;
             yield return LastName;
         }

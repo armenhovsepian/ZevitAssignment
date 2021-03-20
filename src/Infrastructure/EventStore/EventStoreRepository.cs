@@ -29,9 +29,9 @@ namespace Infrastructure.EventStore
         public void Save(Contact entity)
         {
             if (FakeEventStore.TryGetValue(entity.Id, out List<IDomainEvent> changes))
-                changes.AddRange(entity.GetChanges());
+                changes.AddRange(entity.RecordedEvents);
             else
-                FakeEventStore.Add(entity.Id, entity.GetChanges().ToList());
+                FakeEventStore.Add(entity.Id, entity.RecordedEvents.ToList());
         }
     }
 }

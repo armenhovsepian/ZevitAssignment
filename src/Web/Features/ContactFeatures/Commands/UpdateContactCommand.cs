@@ -9,7 +9,7 @@ namespace Web.Features.ContactFeatures.Commands
 {
     public class UpdateContactCommand : IRequest<int>
     {
-        public ContactFormModel Model { get; set; }
+        public ContactFormModel Model { get; private set; }
         public UpdateContactCommand(ContactFormModel model)
         {
             Model = model;

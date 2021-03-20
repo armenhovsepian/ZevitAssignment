@@ -13,7 +13,7 @@ namespace Web.Features.ContactFeatures.Queries
 {
     public class GetAllContactsQuery: IRequest<IEnumerable<ContactDto>>
     {
-        public PagingOptions PagingOptions { get; set; }
+        public PagingOptions PagingOptions { get; private set; }
         
         public GetAllContactsQuery(PagingOptions pagingOptions)
         {

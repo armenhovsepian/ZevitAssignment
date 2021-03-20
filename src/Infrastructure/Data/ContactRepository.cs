@@ -1,5 +1,7 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
@@ -7,6 +9,12 @@ namespace Infrastructure.Data
     {
         public ContactRepository(ContactContext dbContext) : base(dbContext)
         {
+        }
+
+        public async Task<bool> IsEmailAddressExists(string emailAddress)
+        {
+            return await _dbContext.Contacts
+                .AnyAsync(c => c.EmailAddress.Value.Equals(emailAddress, System.StringComparison.OrdinalIgnoreCase));
         }
     }
 }

@@ -10,3 +10,15 @@ D:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\In
 D:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.csproj.CopyComplete
 D:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.dll
 D:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.pdb
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\bin\Debug\netstandard2.1\Infrastructure.deps.json
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\bin\Debug\netstandard2.1\Infrastructure.dll
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\bin\Debug\netstandard2.1\Infrastructure.pdb
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\bin\Debug\netstandard2.1\ApplicationCore.dll
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\bin\Debug\netstandard2.1\ApplicationCore.pdb
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.csprojAssemblyReference.cache
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.AssemblyInfoInputs.cache
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.AssemblyInfo.cs
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.csproj.CoreCompileInputs.cache
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.csproj.CopyComplete
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.dll
+F:\GithubProjects\ZevitAssignment\src\Infrastructure\obj\Debug\netstandard2.1\Infrastructure.pdb

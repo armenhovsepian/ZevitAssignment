@@ -6,39 +6,46 @@ namespace ApplicationCore.Events
     {
         public class BaseContactEvent : IDomainEvent
         {
-            public int Id { get; set; }
+            public int Id { get; protected set; }
 
-            public DateTimeOffset Created { get; set; } = DateTimeOffset.UtcNow;
+            public DateTimeOffset Created { get; protected set; } = DateTimeOffset.UtcNow;
         }
 
         public class ContactCreated : BaseContactEvent
         {
+            public ContactCreated(int id) => Id = id;
             // store created userId
         }
 
         public class ContactDeleted : BaseContactEvent
         {
+            public ContactDeleted(int id) => Id = id;
             // store deleted userId
         }
 
         public class ContactFullNameUpdated : BaseContactEvent
         {
-            public string FullName { get; set; }
+            public ContactFullNameUpdated(string fullName) => FullName = fullName;
+            public string FullName { get; private set; }
         }
 
         public class ContactEmailAddressUpdated : BaseContactEvent
         {
-            public string EmailAddress { get; set; }
+            public ContactEmailAddressUpdated(string emailAddress) => EmailAddress = emailAddress;
+            public string EmailAddress { get; private set; }
         }
 
         public class ContactAddressUpdated : BaseContactEvent
         {
-            public string Address { get; set; }
+            public ContactAddressUpdated(string address) => Address = address;
+            
+            public string Address { get; private set; }
         }
 
         public class ContactPhoneNumberUpdated : BaseContactEvent
         {
-            public string PhoneNumber { get; set; }
+            public ContactPhoneNumberUpdated(string phoneNumber) => PhoneNumber = phoneNumber;
+            public string PhoneNumber { get; private set; }
         }
     }
 }
