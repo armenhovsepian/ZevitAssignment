@@ -31,8 +31,9 @@
     ".NETCoreApp,Version=v3.1": {
       "Web/1.0.0": {
         "dependencies": {
-          "ApplicationCore": "1.0.0",
+          "Application": "1.0.0",
           "AutoMapper": "10.1.1",
+          "Domain": "1.0.0",
           "Infrastructure": "1.0.0",
           "MediatR": "9.0.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0",
@@ -2249,17 +2250,31 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "ApplicationCore/1.0.0": {
+      "Application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Infrastructure": "1.0.0",
+          "MediatR": "9.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0"
+        },
         "runtime": {
-          "ApplicationCore.dll": {}
+          "Application.dll": {}
         },
         "compile": {
-          "ApplicationCore.dll": {}
+          "Application.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
+        },
+        "compile": {
+          "Domain.dll": {}
         }
       },
       "Infrastructure/1.0.0": {
         "dependencies": {
-          "ApplicationCore": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
@@ -5026,7 +5041,12 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "ApplicationCore/1.0.0": {
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

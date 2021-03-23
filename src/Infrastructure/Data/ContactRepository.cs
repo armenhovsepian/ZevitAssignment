@@ -1,5 +1,5 @@
-﻿using ApplicationCore.Entities.AggregatesModel;
-using ApplicationCore.Interfaces;
+﻿using Domain.Entities.AggregatesModel;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 

@@ -1,11 +1,12 @@
-﻿using ApplicationCore.Dtos;
+﻿using Application.Features.ContactFeatures.Commands;
+using Application.Features.ContactFeatures.Queries;
+using AutoMapper;
+using Domain.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Web.Features.ContactFeatures.Commands;
-using Web.Features.ContactFeatures.Queries;
 using Web.Models;
 
 namespace Web.Controllers.Api
@@ -15,9 +16,11 @@ namespace Web.Controllers.Api
     public class ContactsController : Controller
     {
         private readonly IMediator _mediator;
-        public ContactsController(IMediator mediator)
+        private readonly IMapper _mapper;
+        public ContactsController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         // GET api/contacts
@@ -25,7 +28,7 @@ namespace Web.Controllers.Api
         [HttpGet(Name = nameof(GetContactsAsync))]
         public async Task<ActionResult<IEnumerable<ContactDto>>> GetContactsAsync([FromQuery] PagingOptions pagingOptions, CancellationToken ct)
         {
-            var contacts = await _mediator.Send(new GetAllContactsQuery(pagingOptions), ct); 
+            var contacts = await _mediator.Send(new GetAllContactsQuery(pagingOptions.Skip, pagingOptions.Take), ct);
             return Ok(contacts);
         }
 
@@ -44,7 +47,7 @@ namespace Web.Controllers.Api
         [HttpPost]
         public async Task<ActionResult> CreateContactAsync([FromBody] ContactFormModel model, CancellationToken ct)
         {
-            return Ok(await _mediator.Send(new CreateContactCommand(model), ct));
+            return Ok(await _mediator.Send(new CreateContactCommand(_mapper.Map<ContactDto>(model)), ct));
         }
 
 
@@ -61,7 +64,7 @@ namespace Web.Controllers.Api
         {
             if (id != model.Id) return BadRequest();
 
-            await _mediator.Send(new UpdateContactCommand(model), ct);
+            await _mediator.Send(new UpdateContactCommand(_mapper.Map<ContactDto>(model)), ct);
 
             return NoContent();
         }

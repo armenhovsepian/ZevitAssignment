@@ -1,6 +1,6 @@
-﻿using ApplicationCore.Entities.AggregatesModel;
-using ApplicationCore.Events;
-using ApplicationCore.Interfaces;
+﻿using Domain.Entities.AggregatesModel;
+using Domain.Events;
+using Domain.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,6 +32,11 @@ namespace Infrastructure.EventStore
                 changes.AddRange(entity.RecordedEvents);
             else
                 FakeEventStore.Add(entity.Id, entity.RecordedEvents.ToList());
+        }
+
+        List<IDomainEvent> IEventStoreRepository.LoadChanges(int id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

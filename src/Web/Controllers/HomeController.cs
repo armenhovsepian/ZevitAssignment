@@ -1,12 +1,13 @@
-﻿using AutoMapper;
+﻿using Application.Features.ContactFeatures.Commands;
+using Application.Features.ContactFeatures.Queries;
+using AutoMapper;
+using Domain.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Web.Features.ContactFeatures.Commands;
-using Web.Features.ContactFeatures.Queries;
 using Web.Models;
 
 namespace Web.Controllers
@@ -28,7 +29,7 @@ namespace Web.Controllers
         {
             pagingOptions.PageNumber = 1;
             pagingOptions.PageSize = 100;
-            var contacts = await _mediator.Send(new GetAllContactsQuery(pagingOptions), ct);
+            var contacts = await _mediator.Send(new GetAllContactsQuery(pagingOptions.Skip, pagingOptions.Take), ct);
             return View(contacts);
         }
 
@@ -43,7 +44,7 @@ namespace Web.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            await _mediator.Send(new CreateContactCommand(model), ct);
+            await _mediator.Send(new CreateContactCommand(_mapper.Map<ContactDto>(model)), ct);
             return RedirectToAction(nameof(Index));
         }
 
@@ -59,11 +60,11 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit( ContactFormModel model, CancellationToken ct)
+        public async Task<IActionResult> Edit(ContactFormModel model, CancellationToken ct)
         {
             if (!ModelState.IsValid) return View(model);
 
-            await _mediator.Send(new UpdateContactCommand(model), ct);
+            await _mediator.Send(new UpdateContactCommand(_mapper.Map<ContactDto>(model)), ct);
             return RedirectToAction(nameof(Index));
         }
 

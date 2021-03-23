@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.1/": {
       "Infrastructure/1.0.0": {
         "dependencies": {
-          "ApplicationCore": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.0",
@@ -1542,9 +1542,9 @@
           }
         }
       },
-      "ApplicationCore/1.0.0": {
+      "Domain/1.0.0": {
         "runtime": {
-          "ApplicationCore.dll": {}
+          "Domain.dll": {}
         }
       }
     }
@@ -2451,7 +2451,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "ApplicationCore/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

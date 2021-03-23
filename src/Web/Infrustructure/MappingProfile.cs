@@ -1,6 +1,6 @@
-﻿using ApplicationCore.Dtos;
-using ApplicationCore.Entities.AggregatesModel;
-using AutoMapper;
+﻿using AutoMapper;
+using Domain.Dtos;
+using Domain.Entities.AggregatesModel;
 using Web.Models;
 
 namespace Web.Infrustructure
@@ -12,6 +12,7 @@ namespace Web.Infrustructure
             MapFromDomainObject();
             MapToDomainObject();
             MapToViewModel();
+            MapFromViewModel();
         }
 
         private void MapFromDomainObject()
@@ -45,6 +46,11 @@ namespace Web.Infrustructure
         private void MapToViewModel()
         {
             CreateMap<ContactDto, ContactFormModel>();
+        }
+
+        private void MapFromViewModel()
+        {
+            CreateMap<ContactFormModel, ContactDto>();
         }
     }
 }

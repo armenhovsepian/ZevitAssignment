@@ -1,9 +1,9 @@
-﻿using ApplicationCore.Interfaces;
+﻿using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using Web.Models;
-using static ApplicationCore.Events.ContactEvents;
+using static Domain.Events.ContactEvents;
 
 namespace Web.Controllers
 {
@@ -27,7 +27,7 @@ namespace Web.Controllers
             {
                 switch (evt)
                 {
-                      case ContactFullNameUpdated c:
+                    case ContactFullNameUpdated c:
                         models.Add(new ContactChangesModel
                         {
                             Id = evt.Id,

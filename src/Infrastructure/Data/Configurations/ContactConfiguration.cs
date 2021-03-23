@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities.AggregatesModel;
+﻿using Domain.Entities.AggregatesModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -2649,21 +2649,37 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "ApplicationCore/1.0.0": {
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Infrastructure": "1.0.0",
+          "MediatR": "9.0.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/ApplicationCore.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ApplicationCore.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       },
       "Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "ApplicationCore": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
@@ -8735,10 +8751,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "ApplicationCore/1.0.0": {
+    "Application/1.0.0": {
       "type": "project",
-      "path": "../ApplicationCore/ApplicationCore.csproj",
-      "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     },
     "Infrastructure/1.0.0": {
       "type": "project",
@@ -8748,8 +8769,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ApplicationCore >= 1.0.0",
+      "Application >= 1.0.0",
       "AutoMapper >= 10.1.1",
+      "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "MediatR >= 9.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
@@ -8788,8 +8810,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
-              "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj"
+            "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj": {
+              "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj"
+            },
+            "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj"
             },
             "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj": {
               "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj"

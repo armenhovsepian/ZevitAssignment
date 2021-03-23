@@ -4,14 +4,14 @@
     "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
+    "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
-        "projectName": "ApplicationCore",
-        "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\rmnho\\.nuget\\packages\\",
-        "outputPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\obj\\",
+        "outputPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -88,8 +88,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj"
+              "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj"
               }
             }
           }

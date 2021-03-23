@@ -4,14 +4,89 @@
     "F:\\GithubProjects\\ZevitAssignment\\src\\Web\\Web.csproj": {}
   },
   "projects": {
-    "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
+    "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
-        "projectName": "ApplicationCore",
-        "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\rmnho\\.nuget\\packages\\",
-        "outputPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\obj\\",
+        "outputPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rmnho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\rmnho\\.nuget\\packages\\",
+        "outputPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -88,8 +163,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj"
+              "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -175,8 +250,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj"
+              "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj": {
+                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Application\\Application.csproj"
+              },
+              "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+                "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj"
               },
               "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Infrastructure\\Infrastructure.csproj"

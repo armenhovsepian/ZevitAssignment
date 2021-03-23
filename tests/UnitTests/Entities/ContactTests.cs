@@ -1,9 +1,9 @@
-﻿using ApplicationCore.Entities;
-using ApplicationCore.Entities.AggregatesModel;
-using ApplicationCore.Exceptions;
+﻿using Domain.Entities;
+using Domain.Entities.AggregatesModel;
+using Domain.Exceptions;
 using NUnit.Framework;
 using System.Linq;
-using static ApplicationCore.Events.ContactEvents;
+using static Domain.Events.ContactEvents;
 
 namespace UnitTests.Entities
 {

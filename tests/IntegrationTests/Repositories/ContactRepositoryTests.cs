@@ -1,5 +1,5 @@
-﻿using ApplicationCore.Entities;
-using ApplicationCore.Entities.AggregatesModel;
+﻿using Domain.Entities;
+using Domain.Entities.AggregatesModel;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
@@ -30,7 +30,7 @@ namespace IntegrationTests.Repositories
                 new FullName("Armen", "Hovsepian"),
                 new EmailAddress("rmn.hovsepian@live.com"),
                 new PhoneNumber("+374-94331230"),
-                new Address("Tigran Petrosyan","Yerevan","Davtashen","Armenia", "1234")
+                new Address("Tigran Petrosyan", "Yerevan", "Davtashen", "Armenia", "1234")
                 );
 
             await _contactRepository.AddAsync(contact, CancellationToken.None);

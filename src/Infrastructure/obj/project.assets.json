@@ -2081,14 +2081,14 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "ApplicationCore/1.0.0": {
+      "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/ApplicationCore.dll": {}
+          "bin/placeholder/Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ApplicationCore.dll": {}
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
@@ -7273,15 +7273,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "ApplicationCore/1.0.0": {
+    "Domain/1.0.0": {
       "type": "project",
-      "path": "../ApplicationCore/ApplicationCore.csproj",
-      "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "ApplicationCore >= 1.0.0",
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.0",
@@ -7320,8 +7320,8 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj": {
-              "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\ApplicationCore\\ApplicationCore.csproj"
+            "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\GithubProjects\\ZevitAssignment\\src\\Domain\\Domain.csproj"
             }
           }
         }

@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Entities;
+﻿using Domain.Entities;
 using NUnit.Framework;
 
 namespace UnitTests.Entities
@@ -8,7 +8,7 @@ namespace UnitTests.Entities
         [Test]
         public void CreateFullName()
         {
-            var fullName = new FullName("Armen","Hovsepian");
+            var fullName = new FullName("Armen", "Hovsepian");
             Assert.AreEqual("Armen Hovsepian", fullName.ToString());
         }
 
