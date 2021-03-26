@@ -11,6 +11,12 @@ using Web.Models;
 
 namespace Web.Controllers.Api
 {
+    /// <summary>
+    /// Applying CQRS in API level
+    /// https://www.infoq.com/articles/rest-api-on-cqrs/
+    /// https://www.exceptionnotfound.net/real-world-cqrs-es-with-asp-net-and-redis-part-1-overview/
+    /// https://developer.spotify.com/documentation/web-api/reference/#reference-index
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ContactsController : Controller
@@ -66,6 +72,20 @@ namespace Web.Controllers.Api
 
             await _mediator.Send(new UpdateContactCommand(_mapper.Map<ContactDto>(model)), ct);
 
+            return NoContent();
+        }
+
+
+        [HttpPost("{id}")]
+        public async Task<IActionResult> AddToTeamAsync(ContactTeamFormModel model, CancellationToken ct)
+        {
+            return NoContent();
+        }
+
+
+        [HttpDelete("/{contactId}/Team/{teamId}")] // ContactTeamFormModel
+        public async Task<IActionResult> DeleteFromTeamAsync(int contactId, int teamId, ContactFormModel model, CancellationToken ct)
+        {
             return NoContent();
         }
     }

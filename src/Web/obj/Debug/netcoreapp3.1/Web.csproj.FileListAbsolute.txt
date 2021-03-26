@@ -163,3 +163,9 @@ F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Infrastructure
 F:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Web.Views.pdb
 F:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Web.csproj.CopyComplete
 F:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Web.genruntimeconfig.cache
+F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
+F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\GithubProjects\ZevitAssignment\src\Web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\GithubProjects\ZevitAssignment\src\Web\obj\Debug\netcoreapp3.1\Web.MvcApplicationPartsAssemblyInfo.cs

@@ -39,6 +39,8 @@ namespace Web
             ConfigureAutoMapper(services);
 
             services.AddControllers();
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +56,15 @@ namespace Web
                 app.UseHsts();
             }
 
-            SeedDb(app);
+            //SeedDb(app);
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Zevit Assignment");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
