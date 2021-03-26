@@ -36,7 +36,8 @@ namespace UnitTests.Entities
                 new FullName("Armen", "Hovsepian"),
                 new EmailAddress("rmn.hovsepian@live.com"),
                 new PhoneNumber("+374-94331230"),
-                new Address("Tigran Petrosyan", "Yerevan", "Davtashen", "Armenia", "1234")
+                new Address("Tigran Petrosyan", "Yerevan", "Davtashen", "Armenia", "1234"),
+                new DateOfBirth(new System.DateTime(1987, 08, 25))
                 );
 
             var wasRecorded = contact

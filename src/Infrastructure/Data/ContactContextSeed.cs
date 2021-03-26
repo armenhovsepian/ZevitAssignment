@@ -1,6 +1,7 @@
 ﻿using Domain.Dtos;
 using Domain.Entities;
 using Domain.Entities.AggregatesModel;
+using System;
 using System.Linq;
 
 namespace Infrastructure.Data
@@ -16,13 +17,15 @@ namespace Infrastructure.Data
 
                 if (!context.Contacts.Any())
                 {
+                    Random rnd = new Random();
                     foreach (var item in CONTACTS)
                     {
                         var contact = new Contact(
                             new FullName(item.FirstName, item.LastName),
                             new EmailAddress(item.EmailAddress),
                             new PhoneNumber(item.PhoneNumber),
-                            new Address(item.Street, item.City, item.State, item.Country, item.ZipCode)
+                            new Address(item.Street, item.City, item.State, item.Country, item.ZipCode),
+                            new DateOfBirth(DateTime.Now.AddYears(-1 * rnd.Next(18, 100)))
                             );
 
                         context.Contacts.Add(contact);

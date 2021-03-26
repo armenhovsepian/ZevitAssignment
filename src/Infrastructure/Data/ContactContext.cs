@@ -12,6 +12,7 @@ namespace Infrastructure.Data
         }
 
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Team> Teams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
